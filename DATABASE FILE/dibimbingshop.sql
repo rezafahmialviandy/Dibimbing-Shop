@@ -48,18 +48,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 
 -- Dumping data for table dibimbing-shop.admins: ~0 rows (approximately)
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`, `admin_about`) VALUES
-	(2, 'Administrator', 'fahmi@cakrawala.ac.id', 'Au1b839@@', 'user-profile-min.png', '7777775500', 'Indonesia', 'Front-End Developer', '  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical  ');
-
--- Dumping structure for table dibimbing-shop.bundle_product_relation
-CREATE TABLE IF NOT EXISTS `bundle_product_relation` (
-  `rel_id` int(10) NOT NULL AUTO_INCREMENT,
-  `rel_title` varchar(255) NOT NULL,
-  `product_id` int(10) NOT NULL,
-  `bundle_id` int(10) NOT NULL,
-  PRIMARY KEY (`rel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- Dumping data for table dibimbing-shop.bundle_product_relation: ~0 rows (approximately)
+	(2, 'Administrator', 'fahmi@cakrawala.ac.id', 'admindibimbing', 'user-profile-min.png', '7777775500', 'Indonesia', 'Front-End Developer', '   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical   ');
 
 -- Dumping structure for table dibimbing-shop.cart
 CREATE TABLE IF NOT EXISTS `cart` (
@@ -71,9 +60,11 @@ CREATE TABLE IF NOT EXISTS `cart` (
   KEY `p_id` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.cart: ~0 rows (approximately)
+-- Dumping data for table dibimbing-shop.cart: ~1 rows (approximately)
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `p_price`, `type`) VALUES
-	(17, '::1', 1, '12000000', 'Brand New');
+	(17, '::1', 1, '12000000', 'Brand New'),
+	(1, '::1', 1, '12000000', 'Brand New'),
+	(4, '192.168.30.147', 1, '7500000', 'Brand New');
 
 -- Dumping structure for table dibimbing-shop.categories
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -178,19 +169,19 @@ INSERT INTO `enquiry_types` (`enquiry_id`, `enquiry_title`) VALUES
 CREATE TABLE IF NOT EXISTS `manufacturers` (
   `manufacturer_id` int(10) NOT NULL AUTO_INCREMENT,
   `manufacturer_title` text NOT NULL,
-  `manufacturer_top` text NOT NULL,
   `manufacturer_image` text NOT NULL,
   PRIMARY KEY (`manufacturer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dibimbing-shop.manufacturers: ~6 rows (approximately)
-INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
-	(9, 'Lenovo', '', 'pngwing.com (4).png'),
-	(10, 'Apple', '', 'pngwing.com (6).png'),
-	(11, 'Oppo', '', 'pngwing.com.png'),
-	(12, 'Vivo', '', 'pngwing.com (3).png'),
-	(13, 'Hp', '', 'pngwing.com (2).png'),
-	(14, 'Asus', '', 'pngwing.com (1).png');
+INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_image`) VALUES
+	(9, 'Lenovo', 'pngwing.com (4).png'),
+	(10, 'Apple', 'pngwing.com (6).png'),
+	(11, 'Oppo', 'pngwing.com.png'),
+	(12, 'Vivo', 'pngwing.com (3).png'),
+	(13, 'Hp', 'pngwing.com (2).png'),
+	(14, 'Asus', 'pngwing.com (1).png'),
+	(15, 'Xiaomi', 'Xiaomi.png');
 
 -- Dumping structure for table dibimbing-shop.payments
 CREATE TABLE IF NOT EXISTS `payments` (
@@ -275,12 +266,12 @@ CREATE TABLE IF NOT EXISTS `products` (
   `product_label` text NOT NULL,
   `status` varchar(255) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dibimbing-shop.products: ~2 rows (approximately)
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_psp_price`, `product_desc`, `product_features`, `product_video`, `product_keywords`, `product_label`, `status`) VALUES
-	(17, 0, 6, 11, '2025-04-29 03:21:20', ' OPPO Find N5 - Foldable Handphone', 'oppo-find-n5', '97959bb1-f9bd-4ea4-9f40-615a3963a5fb.jpg.webp', 'ff5d729d-1dbf-465a-a497-5c1f55733477.jpg', '3160c922-d38b-47a3-9a47-3206f1305203.jpg', 12000000, 1000000, '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n<center>\r\n<video width="500" height="500" controls>\r\n  <source src="https://vod-stream.tokopedia.net/view/ttvideo?source=QeEaKL&ttvid=v10c21g50000d04rs8nog65sfh14lf70" type="video/mp4">\r\nYour browser does not support the video tag.\r\n</video>\r\n<center>\r\n', 'oppo-find-n5', 'oppo-find-n5', 'product'),
-	(18, 0, 6, 12, '2025-04-28 04:08:19', 'vivo V50 5G Rounded-edge Design', 'vivo-v50', '4683e613838c4a9e8b0c0c955ce1575e~.jpeg.jpg', '19670cb2032347ebae0ba78373dd2979~.jpeg.jpg', 'd1f89617733b4aba9040dcc57ed7afb0~.jpeg.jpg', 5000000, 5000000, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', 'vivo-v50', 'vivo-v50', 'product');
+	(3, 6, 6, 11, '2025-05-21 06:55:52', ' OPPO Find N5 - Foldable Handphone', 'oppo-find-n5', '97959bb1-f9bd-4ea4-9f40-615a3963a5fb.jpg.webp', '3160c922-d38b-47a3-9a47-3206f1305203.jpg', 'ff5d729d-1dbf-465a-a497-5c1f55733477.jpg', 12000000, 12000000, '', '', '', 'oppo-find-n5', 'Oppo Find N5', 'product'),
+	(4, 6, 6, 15, '2025-05-21 06:55:08', 'Poco F7 Pro - Snapdragon 8 Gen 3', 'poco-f7-pro', '2d96d3dd-615a-4d90-8dab-c402c183fe72.jpg', '1d785021-c94d-47c8-aff3-8cc0e82ade74.jpg', 'a07e3f75-ee2e-4465-925c-f695f0c79b99.jpg', 7500000, 7500000, '', '', '', 'Poco F7 Pro', 'Poco F7 Pro', 'product');
 
 -- Dumping structure for table dibimbing-shop.product_categories
 CREATE TABLE IF NOT EXISTS `product_categories` (
@@ -306,9 +297,9 @@ CREATE TABLE IF NOT EXISTS `store` (
 
 -- Dumping data for table dibimbing-shop.store: ~3 rows (approximately)
 INSERT INTO `store` (`store_id`, `store_title`, `store_image`, `store_desc`, `store_button`, `store_url`) VALUES
-	(4, 'London Store', 'store (3).jpg', '<p style="text-align: center;"><strong>180-182 RECENTS STREET, LONDON, W1B 5BT</strong></p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero erat, aliquet eget mauris ut, dictum sagittis libero. Nam at dui dapibus, semper dolor ac, malesuada mi. Duis quis lobortis arcu. Vivamus sed sodales orci, non varius dolor.</p>', 'View Map', 'http://www.thedailylux.com/ecommerce'),
-	(5, 'New York Store', 'store (1).png', '<p style="text-align: center;"><strong>109 COLUMBUS CIRCLE, NEW YORK, NY10023</strong></p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero erat, aliquet eget mauris ut, dictum sagittis libero. Nam at dui dapibus, semper dolor ac, malesuada mi. Duis quis lobortis arcu. Vivamus sed sodales orci, non varius dolor.</p>', 'View Map', 'http://www.thedailylux.com/ecommerce'),
-	(6, 'Paris Store', 'store (2).jpg', '<p style="text-align: center;"><strong>2133 RUE SAINT-HONORE, 75001 PARIS&nbsp;</strong></p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero erat, aliquet eget mauris ut, dictum sagittis libero. Nam at dui dapibus, semper dolor ac, malesuada mi. Duis quis lobortis arcu. Vivamus sed sodales orci, non varius dolor.</p>', 'View Map', 'http://www.thedailylux.com/ecommerce');
+	(4, 'London Store', '1.jpg', '\r\n\r\n<p style="text-align: center;"><strong>180-182 RECENTS STREET, LONDON, W1B 5BT</strong></p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero erat, aliquet eget mauris ut, dictum sagittis libero. Nam at dui dapibus, semper dolor ac, malesuada mi. Duis quis lobortis arcu. Vivamus sed sodales orci, non varius dolor.</p>\r\n\r\n', 'View Map', 'https://maps.app.goo.gl/ZWbW9PUSUW6UB76h6'),
+	(5, 'New York Store', '4.jpg', '\r\n\r\n<p style="text-align: center;"><strong>109 COLUMBUS CIRCLE, NEW YORK, NY10023</strong></p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero erat, aliquet eget mauris ut, dictum sagittis libero. Nam at dui dapibus, semper dolor ac, malesuada mi. Duis quis lobortis arcu. Vivamus sed sodales orci, non varius dolor.</p>\r\n\r\n', 'View Map', 'https://maps.app.goo.gl/Qaf19853MnStcSbw9'),
+	(6, 'Paris Store', '3.jpg', '\r\n\r\n<p style="text-align: center;"><strong>2133 RUE SAINT-HONORE, 75001 PARIS </strong></p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero erat, aliquet eget mauris ut, dictum sagittis libero. Nam at dui dapibus, semper dolor ac, malesuada mi. Duis quis lobortis arcu. Vivamus sed sodales orci, non varius dolor.</p>\r\n\r\n', 'View Map', 'https://maps.app.goo.gl/CxiVRwgfSQdP5HRN6');
 
 -- Dumping structure for table dibimbing-shop.terms
 CREATE TABLE IF NOT EXISTS `terms` (

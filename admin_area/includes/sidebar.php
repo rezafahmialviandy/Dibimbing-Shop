@@ -65,7 +65,7 @@ else {
 
 <li><!-- li Starts -->
 
-<a href="index.php?view_products" >
+<a href="index.php?products" >
 
 <i class="fa fa-fw fa-envelope" ></i> Products 
 
@@ -140,27 +140,12 @@ else {
 
 <li><!-- Products li Starts -->
 
-<a href="#" data-toggle="collapse" data-target="#products">
+<a href="index.php?product" data-toggle="collapse" data-target="#products">
 
 <i class="fa fa-fw fa-table"></i> Products
 
-<i class="fa fa-fw fa-caret-down"></i>
-
-
 </a>
 
-<ul id="products" class="collapse">
-
-<li>
-<a href="index.php?insert_product"> Insert Products </a>
-</li>
-
-<li>
-<a href="index.php?view_products"> View Products </a>
-</li>
-
-
-</ul>
 
 
 </li><!-- relations li Ends -->
