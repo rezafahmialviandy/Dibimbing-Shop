@@ -65,7 +65,7 @@ else {
 
 <li><!-- li Starts -->
 
-<a href="index.php?products" >
+<a href="index.php?product" >
 
 <i class="fa fa-fw fa-envelope" ></i> Products 
 

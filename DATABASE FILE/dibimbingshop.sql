@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `about_us` (
   PRIMARY KEY (`about_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.about_us: ~0 rows (approximately)
+-- Dumping data for table dibimbing-shop.about_us: ~1 rows (approximately)
 INSERT INTO `about_us` (`about_id`, `about_heading`, `about_short_desc`, `about_desc`) VALUES
 	(1, 'About Us - Our Story', '\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,\r\n', 'Rhone was the collective vision of a small group of weekday warriors. For years, we were frustrated by the lack of activewear designed for men and wanted something better. With that in mind, we set out to design premium apparel that is made for motion and engineered to endure.\r\n\r\nAdvanced materials and state of the art technology are combined with heritage craftsmanship to create a new standard in activewear. Every product tells a story of premium performance, reminding its wearer to push themselves physically without having to sacrifice comfort and style.\r\n\r\nBeyond our product offering, Rhone is founded on principles of progress and integrity. Just as we aim to become better as a company, we invite men everywhere to raise the bar and join us as we move Forever Forward.');
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.admins: ~0 rows (approximately)
+-- Dumping data for table dibimbing-shop.admins: ~1 rows (approximately)
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`, `admin_about`) VALUES
 	(2, 'Administrator', 'fahmi@cakrawala.ac.id', 'admindibimbing', 'user-profile-min.png', '7777775500', 'Indonesia', 'Front-End Developer', '   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical   ');
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   KEY `p_id` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.cart: ~1 rows (approximately)
+-- Dumping data for table dibimbing-shop.cart: ~3 rows (approximately)
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `p_price`, `type`) VALUES
 	(17, '::1', 1, '12000000', 'Brand New'),
 	(1, '::1', 1, '12000000', 'Brand New'),
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`cat_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.categories: ~3 rows (approximately)
+-- Dumping data for table dibimbing-shop.categories: ~4 rows (approximately)
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
 	(6, 'Handphone', 'no', 'hp.png'),
 	(10, 'Laptop', '', 'laptop.png'),
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `coupons` (
   PRIMARY KEY (`coupon_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.coupons: ~0 rows (approximately)
+-- Dumping data for table dibimbing-shop.coupons: ~1 rows (approximately)
 INSERT INTO `coupons` (`coupon_id`, `product_id`, `coupon_title`, `coupon_price`, `coupon_code`, `coupon_limit`, `coupon_used`) VALUES
 	(7, 17, 'test', '10000', '123', 1, 1);
 
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
   PRIMARY KEY (`customer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.customers: ~4 rows (approximately)
+-- Dumping data for table dibimbing-shop.customers: ~5 rows (approximately)
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`, `customer_confirm_code`) VALUES
 	(10, 'mi', 'fahmi@cakrawala.ac.id', '123', '123', '123', '123', '123', '', '192.168.50.168', '1737477381'),
 	(11, 'fahmi', 'rezafahmialviandy@gmail.com', 'NT5Bbhtc', '', '', '', '', '', '', '971651286'),
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `manufacturers` (
   PRIMARY KEY (`manufacturer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.manufacturers: ~6 rows (approximately)
+-- Dumping data for table dibimbing-shop.manufacturers: ~7 rows (approximately)
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_image`) VALUES
 	(9, 'Lenovo', 'pngwing.com (4).png'),
 	(10, 'Apple', 'pngwing.com (6).png'),
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `payments` (
   PRIMARY KEY (`payment_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dibimbing-shop.payments: ~17 rows (approximately)
+-- Dumping data for table dibimbing-shop.payments: ~18 rows (approximately)
 INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
 	(14, 527499177, 0, 'Bank Code', 123, 123, '2025-04-29 12:11:47'),
 	(15, 2098853808, 0, 'UBL/Omni', 123, 123, '2025-04-29 12:10:40'),
@@ -270,8 +270,9 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 -- Dumping data for table dibimbing-shop.products: ~2 rows (approximately)
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_psp_price`, `product_desc`, `product_features`, `product_video`, `product_keywords`, `product_label`, `status`) VALUES
-	(3, 6, 6, 11, '2025-05-21 06:55:52', ' OPPO Find N5 - Foldable Handphone', 'oppo-find-n5', '97959bb1-f9bd-4ea4-9f40-615a3963a5fb.jpg.webp', '3160c922-d38b-47a3-9a47-3206f1305203.jpg', 'ff5d729d-1dbf-465a-a497-5c1f55733477.jpg', 12000000, 12000000, '', '', '', 'oppo-find-n5', 'Oppo Find N5', 'product'),
-	(4, 6, 6, 15, '2025-05-21 06:55:08', 'Poco F7 Pro - Snapdragon 8 Gen 3', 'poco-f7-pro', '2d96d3dd-615a-4d90-8dab-c402c183fe72.jpg', '1d785021-c94d-47c8-aff3-8cc0e82ade74.jpg', 'a07e3f75-ee2e-4465-925c-f695f0c79b99.jpg', 7500000, 7500000, '', '', '', 'Poco F7 Pro', 'Poco F7 Pro', 'product');
+	(3, 6, 6, 11, '2025-05-21 08:43:58', ' OPPO Find N5 - Foldable Handphone', 'oppo-find-n5', '97959bb1-f9bd-4ea4-9f40-615a3963a5fb.jpg.webp', 'ff5d729d-1dbf-465a-a497-5c1f55733477.jpg', '3160c922-d38b-47a3-9a47-3206f1305203.jpg', 12000000, 12000000, '', '', '', 'oppo-find-n5', 'Oppo Find N5', 'product'),
+	(10, 6, 6, 12, '2025-05-21 10:02:55', 'vivo V50 5G Rounded-edge Design', 'vivo-v50', '4683e613838c4a9e8b0c0c955ce1575e~.jpeg.jpg', '19670cb2032347ebae0ba78373dd2979~.jpeg.jpg', 'd1f89617733b4aba9040dcc57ed7afb0~.jpeg.jpg', 5000000, 5000000, '', '', '', 'vivo-v50', 'Vivo V50', 'product'),
+	(11, 6, 6, 15, '2025-05-21 10:03:46', 'Poco F7 Pro - Snapdragon 8 Gen 3', 'poco-f7-pro', '2d96d3dd-615a-4d90-8dab-c402c183fe72.jpg.webp', '1d785021-c94d-47c8-aff3-8cc0e82ade74.jpg', 'a07e3f75-ee2e-4465-925c-f695f0c79b99.jpg', 7500000, 7500000, '', '', '', 'poco-f7-pro', 'Poco F7 Pro', 'product');
 
 -- Dumping structure for table dibimbing-shop.product_categories
 CREATE TABLE IF NOT EXISTS `product_categories` (

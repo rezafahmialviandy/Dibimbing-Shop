@@ -15,6 +15,7 @@ else {
 
 
 
+
 ?>
 
 <?php
@@ -80,6 +81,8 @@ $count_total_earnings = $row['Total'];
 $get_coupons = "SELECT * FROM coupons";
 $run_coupons = mysqli_query($con,$get_coupons);
 $count_coupons = mysqli_num_rows($run_coupons);
+
+
 
 
 ?>
@@ -508,6 +511,56 @@ if(isset($_GET['edit_store'])){
 include("edit_store.php");
 
 }
+
+
+if (isset($_GET['delete_product'])) {
+    $delete_id = intval($_GET['delete_product']);
+
+    $result = mysqli_query($con, "SELECT product_img1, product_img2, product_img3 FROM products WHERE product_id = $delete_id");
+    if ($row = mysqli_fetch_assoc($result)) {
+        foreach (['product_img1', 'product_img2', 'product_img3'] as $img_field) {
+            $img_path = 'product_images/' . $row[$img_field];
+            if (!empty($row[$img_field]) && file_exists($img_path)) {
+                unlink($img_path);
+            }
+        }
+    }
+
+    $delete_query = "DELETE FROM products WHERE product_id = $delete_id";
+    if (mysqli_query($con, $delete_query)) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Deleted!',
+            text: 'Product has been deleted successfully.',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            window.location.href = 'index.php?product';
+        });
+        </script>
+        ";
+        exit;
+    } else {
+        $error_msg = mysqli_error($con);
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: 'Failed to delete product: {$error_msg}',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            window.location.href = 'index.php?product';
+        });
+        </script>
+        ";
+        exit;
+    }
+}
+
 
 ?>
 

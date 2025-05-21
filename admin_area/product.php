@@ -1,15 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- TinyMCE -->
+    <script src="https://cdn.tinymce.com/5/tinymce.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        tinymce.init({ selector:'#product_desc,#product_features' });
+    </script>
+
+    <style>
+        .table > tbody > tr:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+        .btn-sm {
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+
 <?php
-// session_start();
+
 if (!isset($_SESSION['admin_email'])) {
     echo "<script>window.open('login.php','_self')</script>";
     exit;
 }
 
-// // Ganti koneksi ini sesuai database kamu
-// $con = mysqli_connect('localhost', 'root', '', 'your_database');
-// if (!$con) {
-//     die('Connection failed: ' . mysqli_connect_error());
-// }
+
 
 // Proses Insert Product
 if (isset($_POST['submit'])) {
@@ -69,11 +102,11 @@ if (isset($_POST['submit'])) {
         <script>
         Swal.fire({
             icon: 'success',
-            title: 'Success',
+            title: 'Success', 
             text: 'Product has been inserted successfully',
             confirmButtonText: 'OK'
         }).then(() => {
-            window.location.href = '" . $_SERVER['PHP_SELF'] . "';
+            window.location.href = 'index.php?product','_self';
         });
         </script>
         ";
@@ -140,6 +173,7 @@ if (isset($_POST['edit_submit'])) {
         WHERE product_id = '$edit_product_id'
     ";
 
+    // Setelah update berhasil
     if (mysqli_query($con, $update_sql)) {
         echo "
         <script>
@@ -149,7 +183,7 @@ if (isset($_POST['edit_submit'])) {
             text: 'Product updated successfully',
             confirmButtonText: 'OK'
         }).then(() => {
-            window.location.href = '" . $_SERVER['PHP_SELF'] . "';
+            window.location.href = 'index.php?product','_self';
         });
         </script>
         ";
@@ -170,42 +204,6 @@ if (isset($_POST['edit_submit'])) {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Products Dashboard</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- TinyMCE -->
-    <script src="https://cdn.tinymce.com/5/tinymce.min.js"></script>
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-        tinymce.init({ selector:'#product_desc,#product_features' });
-    </script>
-
-    <style>
-        .table > tbody > tr:hover {
-            background-color: #f5f5f5;
-            cursor: pointer;
-        }
-        .btn-sm {
-            padding: 4px 8px;
-            font-size: 12px;
-        }
-    </style>
-</head>
-<body>
-
 <div class="container" style="margin-top:20px;">
     <h2>Products Dashboard</h2>
 
@@ -628,12 +626,11 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    // SweetAlert2 Delete confirmation
     $('.btn-delete').click(function(e) {
-        e.preventDefault(); // cegah link langsung aktif
+        e.preventDefault(); // cegah redirect default
 
-        const link = $(this).attr('href');
-        const title = $(this).data('title');
+        let link = $(this).attr('href');
+        let title = $(this).data('title');
 
         Swal.fire({
             title: `Delete "${title}"?`,
@@ -646,12 +643,12 @@ $(document).ready(function() {
             cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Jika klik yes, redirect ke link hapus
-                window.location.href = link;
+                window.location.href = link; // baru redirect ke delete handler
             }
         });
     });
 });
+
 </script>
 
 </body>
