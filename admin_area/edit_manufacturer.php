@@ -28,8 +28,6 @@ $m_id = $row_manufacturer['manufacturer_id'];
 
 $m_title = $row_manufacturer['manufacturer_title'];
 
-$m_top = $row_manufacturer['manufacturer_top'];
-
 $m_image = $row_manufacturer['manufacturer_image'];
 
 $new_m_image = $row_manufacturer['manufacturer_image'];

@@ -104,7 +104,6 @@ if(isset($_POST['submit'])){
 
 $manufacturer_name = $_POST['manufacturer_name'];
 
-$manufacturer_top = $_POST['manufacturer_top'];
 
 $manufacturer_image = $_FILES['manufacturer_image']['name'];
 
@@ -112,7 +111,7 @@ $tmp_name = $_FILES['manufacturer_image']['tmp_name'];
 
 move_uploaded_file($tmp_name,"other_images/$manufacturer_image");
 
-$insert_manufacturer = "insert into manufacturers (manufacturer_title,manufacturer_top,manufacturer_image) values ('$manufacturer_name','$manufacturer_top','$manufacturer_image')";
+$insert_manufacturer = "insert into manufacturers (manufacturer_title,manufacturer_image) values ('$manufacturer_name','$manufacturer_image')";
 
 $run_manufacturer = mysqli_query($con,$insert_manufacturer);
 
