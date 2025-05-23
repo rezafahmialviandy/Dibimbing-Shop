@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost","root","","dibimbing-shop");
+include(__DIR__ . '/../includes/db.php');
 
 /// IP address code starts /////
 function getRealUserIp(){
@@ -17,13 +17,13 @@ function getRealUserIp(){
 
 function items(){
 
-global $db;
+global $con;
 
 $ip_add = getRealUserIp();
 
 $get_items = "select * from cart where ip_add='$ip_add'";
 
-$run_items = mysqli_query($db,$get_items);
+$run_items = mysqli_query($con,$get_items);
 
 $count_items = mysqli_num_rows($run_items);
 
@@ -38,7 +38,7 @@ echo $count_items;
 
 function total_price(){
 
-global $db;
+global $con;
 
 $ip_add = getRealUserIp();
 
@@ -46,7 +46,7 @@ $total = 0;
 
 $select_cart = "select * from cart where ip_add='$ip_add'";
 
-$run_cart = mysqli_query($db,$select_cart);
+$run_cart = mysqli_query($con,$select_cart);
 
 while($record=mysqli_fetch_array($run_cart)){
 
@@ -56,7 +56,7 @@ $pro_qty = $record['qty'];
 
 $get_price = "select * from products where product_id='$pro_id'";
 
-$run_price = mysqli_query($db,$get_price);
+$run_price = mysqli_query($con,$get_price);
 
 while($row_price=mysqli_fetch_array($run_price)){
 
@@ -87,11 +87,11 @@ echo "$" . $total;
 
 function getPro(){
 
-global $db;
+global $con;
 
 $get_products = "select * from products order by 1 DESC LIMIT 0,8";
 
-$run_products = mysqli_query($db,$get_products);
+$run_products = mysqli_query($con,$get_products);
 
 while($row_products=mysqli_fetch_array($run_products)){
 

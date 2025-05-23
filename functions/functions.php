@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "dibimbing-shop");
+include(__DIR__ . '/../includes/db.php');
 
 /// IP address code starts ///
 function getRealUserIp() {
@@ -21,13 +21,13 @@ function getRealUserIp() {
 
 /// items function Starts ///
 function items() {
-    global $db;
+    global $con;
 
     $ip_add = getRealUserIp();
 
     $get_items = "SELECT * FROM cart WHERE ip_add='$ip_add'";
 
-    $run_items = mysqli_query($db, $get_items);
+    $run_items = mysqli_query($con, $get_items);
 
     $count_items = mysqli_num_rows($run_items);
 
@@ -37,7 +37,7 @@ function items() {
 
 /// total_price function Starts ///
 function total_price() {
-    global $db;
+    global $con;
 
     $ip_add = getRealUserIp();
 
@@ -45,7 +45,7 @@ function total_price() {
 
     $select_cart = "SELECT * FROM cart WHERE ip_add='$ip_add'";
 
-    $run_cart = mysqli_query($db, $select_cart);
+    $run_cart = mysqli_query($con, $select_cart);
 
     while ($record = mysqli_fetch_array($run_cart)) {
         $pro_id = $record['p_id'];
@@ -62,11 +62,11 @@ function total_price() {
 
 /// getPro function Starts ///
 function getPro() {
-    global $db;
+    global $con;
 
     $get_products = "SELECT * FROM products ORDER BY 1 DESC LIMIT 0, 8";
 
-    $run_products = mysqli_query($db, $get_products);
+    $run_products = mysqli_query($con, $get_products);
 
     while ($row_products = mysqli_fetch_array($run_products)) {
         $pro_id = $row_products['product_id'];
@@ -77,7 +77,7 @@ function getPro() {
         $manufacturer_id = $row_products['manufacturer_id'];
 
         $get_manufacturer = "SELECT * FROM manufacturers WHERE manufacturer_id='$manufacturer_id'";
-        $run_manufacturer = mysqli_query($db, $get_manufacturer);
+        $run_manufacturer = mysqli_query($con, $get_manufacturer);
         $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
         $manufacturer_name = $row_manufacturer['manufacturer_title'];
@@ -130,7 +130,7 @@ function getPro() {
 
 /// getProducts function Starts ///
 function getProducts() {
-    global $db;
+    global $con;
 
     $aWhere = array();
 
@@ -170,7 +170,7 @@ function getProducts() {
 
     $get_products = "SELECT * FROM products " . $sWhere;
 
-    $run_products = mysqli_query($db, $get_products);
+    $run_products = mysqli_query($con, $get_products);
 
     while ($row_products = mysqli_fetch_array($run_products)) {
         $pro_id = $row_products['product_id'];
@@ -181,7 +181,7 @@ function getProducts() {
         $manufacturer_id = $row_products['manufacturer_id'];
 
         $get_manufacturer = "SELECT * FROM manufacturers WHERE manufacturer_id='$manufacturer_id'";
-        $run_manufacturer = mysqli_query($db, $get_manufacturer);
+        $run_manufacturer = mysqli_query($con, $get_manufacturer);
         $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
         $manufacturer_name = $row_manufacturer['manufacturer_title'];
@@ -234,7 +234,7 @@ function getProducts() {
 
 /// getPaginator function Starts ///
 function getPaginator() {
-  global $db;
+  global $con;
 
   $per_page = 6;
   $aWhere = array();
@@ -273,7 +273,7 @@ function getPaginator() {
   $sWhere = (count($aWhere) > 0 ? ' WHERE ' . implode(' OR ', $aWhere) : '');
 
   $query = "SELECT * FROM products " . $sWhere;
-  $result = mysqli_query($db, $query);
+  $result = mysqli_query($con, $query);
   $total_records = mysqli_num_rows($result);
   $total_pages = ceil($total_records / $per_page);
 

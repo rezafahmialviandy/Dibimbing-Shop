@@ -51,7 +51,7 @@ if (isset($_SESSION['customer_email'])) {
                 title: 'Order Submitted',
                 text: 'Your order has been submitted, Thank you!',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 1000
             }).then(() => {
                 window.location.href = 'customer/my_account.php?my_orders';
             });
