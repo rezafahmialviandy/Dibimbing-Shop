@@ -133,8 +133,6 @@ if(isset($_POST['update'])){
 
 $manufacturer_name = $_POST['manufacturer_name'];
 
-$manufacturer_top = $_POST['manufacturer_top'];
-
 $manufacturer_image = $_FILES['manufacturer_image']['name'];
 
 $tmp_name = $_FILES['manufacturer_image']['tmp_name'];
@@ -147,7 +145,7 @@ $manufacturer_image = $new_m_image;
 
 }
 
-$update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_name',manufacturer_top='$manufacturer_top',manufacturer_image='$manufacturer_image' where manufacturer_id='$m_id'";
+$update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_name',manufacturer_image='$manufacturer_image' where manufacturer_id='$m_id'";
 
 $run_manufacturer = mysqli_query($con,$update_manufacturer);
 
