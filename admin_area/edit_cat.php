@@ -27,8 +27,6 @@ $c_id = $row_edit['cat_id'];
 
 $c_title = $row_edit['cat_title'];
 
-$c_top = $row_edit['cat_top'];
-
 $c_image = $row_edit['cat_image'];
 
 $new_c_image = $row_edit['cat_image'];
@@ -88,25 +86,6 @@ $new_c_image = $row_edit['cat_image'];
 
 </div><!-- form-group Ends -->
 
-<div class="form-group"><!-- form-group Starts -->
-
-<label class="col-md-3 control-label">Show as Category Top</label>
-
-<div class="col-md-6">
-
-<input type="radio" name="cat_top" value="yes" 
-<?php if($c_top == 'no'){}else{ echo "checked='checked'"; } ?>>
-
-<label>Yes</label>
-
-<input type="radio" name="cat_top" value="no" 
-<?php if($c_top == 'no'){ echo "checked='checked'"; }else{} ?>>
-
-<label>No</label>
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group"><!-- form-group Starts -->
 
@@ -153,7 +132,6 @@ if(isset($_POST['update'])){
 
 $cat_title = $_POST['cat_title'];
 
-$cat_top = $_POST['cat_top'];
 
 $cat_image = $_FILES['cat_image']['name'];
 
@@ -167,7 +145,7 @@ $cat_image= $new_c_image;
 
 }
 
-$update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top',cat_image='$cat_image' where cat_id='$c_id'";
+$update_cat = "update categories set cat_title='$cat_title',cat_image='$cat_image' where cat_id='$c_id'";
 
 $run_cat = mysqli_query($con,$update_cat);
 

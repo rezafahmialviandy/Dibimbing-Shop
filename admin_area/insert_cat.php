@@ -104,7 +104,6 @@ if(isset($_POST['submit'])){
 
 $cat_title = $_POST['cat_title'];
 
-$cat_top = $_POST['cat_top'];
 
 $cat_image = $_FILES['cat_image']['name'];
 
@@ -112,7 +111,7 @@ $temp_name = $_FILES['cat_image']['tmp_name'];
 
 move_uploaded_file($temp_name,"other_images/$cat_image");
 
-$insert_cat = "insert into categories (cat_title,cat_top,cat_image) values ('$cat_title','$cat_top','$cat_image')";
+$insert_cat = "insert into categories (cat_titl,cat_image) values ('$cat_title','$cat_image')";
 
 $run_cat = mysqli_query($con,$insert_cat);
 
