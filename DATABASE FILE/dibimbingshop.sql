@@ -16,8 +16,8 @@
 
 
 -- Dumping database structure for dibimbing-shop
-CREATE DATABASE IF NOT EXISTS `dibimbing-shop` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
-USE `dibimbing-shop`;
+CREATE DATABASE IF NOT EXISTS `dibimbing-shop-2` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `dibimbing-shop-2`;
 
 -- Dumping structure for table dibimbing-shop.about_us
 CREATE TABLE IF NOT EXISTS `about_us` (
