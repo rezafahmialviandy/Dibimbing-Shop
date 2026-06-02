@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto" rel="stylesheet">
   <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="shortcut icon" href="images/dibimbinglogo.jpg" type="image/png">
-  <title>Dibimbing-Shop</title>
+  <link rel="shortcut icon" href="images/dibimbinglogo.jpg" type="image/png">
+  <title>BimbyCart</title>
   <link href="styles/bootstrap.min.css" rel="stylesheet">
   <link href="styles/backend.css" rel="stylesheet">
   <link href="styles/style.css" rel="stylesheet">
