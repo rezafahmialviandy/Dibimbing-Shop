@@ -132,7 +132,7 @@ body, html {
           <div>
             <center>
               <h2 class="text-center mb-3 login-title"> Register A New Account </h2>
-              <p class="text-center text-muted">Join and experience the ease of transacting on DibimbingShop.</p>
+              <p class="text-center text-muted">Join and experience the ease of transacting on BimbyCart.</p>
             </center>
           </div>
           <br>
@@ -179,7 +179,7 @@ body, html {
                 <i class="fa fa-user-md"></i> Register
               </button>
               <br>
-              <p style="padding-top:2px" class="text-center mt-3">Already Have An Account DibimbingShop?<a href="login.php"> login here</a></p>
+              <p style="padding-top:2px" class="text-center mt-3">Already Have An Account BimbyCart?<a href="login.php"> login here</a></p>
             </div>
           </form>
         </div>
@@ -335,7 +335,7 @@ if(isset($_POST['register'])){
     $subject = "Email Confirmation Message";
     $from = "fahmi@cakrawala.ac.id";
     $message = "
-      <h2>Email Confirmation By DibimbingShop.com $c_name</h2>
+      <h2>Email Confirmation By BimbyCart.com $c_name</h2>
       <a href='localhost/ecom_store/customer/my_account.php?$customer_confirm_code'>Click Here To Confirm Email</a>";
     
     $headers = "From: $from \r\n";

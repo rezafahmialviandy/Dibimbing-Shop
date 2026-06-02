@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" href="../admin_images/dibimbinglogo.jpg" type="image/jpg">
-  <title>Dibimbing Shop</title>
+  <title>BimbyCart</title>
   <link href="styles/bootstrap.min.css" rel="stylesheet">
   <link href="styles/backend.css" rel="stylesheet">
   <link href="styles/style.css" rel="stylesheet">

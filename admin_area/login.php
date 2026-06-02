@@ -7,7 +7,7 @@ include("includes/db.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login | DibimbingShop</title>
+    <title>Admin Login | BimbyCart</title>
     <link rel="shortcut icon" href="admin_images/dibimbinglogo.jpg" type="image/jpg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">

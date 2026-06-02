@@ -39,7 +39,7 @@
 
       <div class="logo">
         <a class="logo__link" href="../index.php">
-          <img class="logo__img" src="images/LogoUtama.png" alt="DibimbingShop logotype" width="237" height="19">
+          <img class="logo__img" src="images/LogoUtama.png" alt="BimbyCart logotype" width="237" height="19">
         </a>
       </div>
 

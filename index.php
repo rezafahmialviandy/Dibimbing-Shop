@@ -122,7 +122,7 @@ include("includes/main.php");
             <div class="col-12 col-sm-6 col-md-3 mb-4">
                 <h5 class="footer-heading">Contact Us</h5>
                 <address>
-                    DibimbingShop<br>
+                    BimbyCart<br>
                     12510, Plaza City View lv.2<br>
                     South Jakarta, Indonesia
                 </address>
@@ -140,7 +140,7 @@ include("includes/main.php");
         </div>
     <center>
     <div class="footer-bottom d-flex justify-content-between align-items-center mt-4">
-      <div>&copy; <?php echo date("Y"); ?> Dibimbing Shop™</div>
+      <div>&copy; <?php echo date("Y"); ?> BimbyCart™</div>
       <div>Developed & Designed by <a href="https://dibimbing.id" class="text-white">Dibimbing.id</a></div>
     </div>
 </center>
